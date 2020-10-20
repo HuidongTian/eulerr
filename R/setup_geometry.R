@@ -151,7 +151,8 @@ setup_geometry <- function(x,
 
         if ("percent" %in% type) {
           perc <- num/sum(num, na.rm = TRUE)*100
-          perc <- ifelse(perc >= 1, as.character(round(perc)), "< 1")
+          # perc <- ifelse(perc >= 1, as.character(round(perc)), "< 1")
+          perc <- as.character(round(perc, 1))
           perc <- sapply(perc[!is.na(perc)], function(x) paste0(x, " %"))
         }
 
