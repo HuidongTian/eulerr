@@ -16,7 +16,7 @@ setup_geometry <- function(x,
                            edges,
                            labels,
                            quantities,
-                           n,
+                           n,N,
                            id,
                            merged_sets) {
   dd <- x$ellipses
@@ -150,7 +150,8 @@ setup_geometry <- function(x,
         type <- quantities$type
 
         if ("percent" %in% type) {
-          perc <- num/sum(num, na.rm = TRUE)*100
+          # perc <- num/sum(num, na.rm = TRUE)*100
+          perc <- num/N*100
           # perc <- ifelse(perc >= 1, as.character(round(perc)), "< 1")
           perc <- as.character(round(perc, 1))
           perc <- sapply(perc[!is.na(perc)], function(x) paste0(x, " %"))
