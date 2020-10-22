@@ -116,7 +116,7 @@
 #'
 #' # Plots using 'by' argument
 #' plot(euler(fruits[, 1:4], by = list(sex)), legend = TRUE)
-plot.euler <- function(x,
+plot.euler <- function(x, N,
                        fills = TRUE,
                        edges = TRUE,
                        legend = FALSE,
@@ -437,7 +437,7 @@ plot.euler <- function(x,
                    edges = edges,
                    labels = labels,
                    quantities = quantities,
-                   n = n,
+                   n = n, N=N,
                    id = id,
                    merged_sets = merged_sets)
   } else {
@@ -446,7 +446,7 @@ plot.euler <- function(x,
                            edges = edges,
                            labels = labels,
                            quantities = quantities,
-                           n = n,
+                           n = n, N = N,
                            id = id,
                            merged_sets = merged_sets)
   }
